@@ -13,6 +13,10 @@ class App extends Component{
 
 export default App;
 
-const hello = () => ({Welcome: 'hello'});
-const store = createStore(hello);
+const greeting = (state, action) => {
+
+};
+
+
+const store = createStore(greeting);
 console.log(store.getState());
