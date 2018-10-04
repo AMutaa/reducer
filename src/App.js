@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {createStore} form 'redux'
+import {createStore} from 'redux'
 
 class App extends Component{
   render(){
@@ -12,3 +12,7 @@ class App extends Component{
 }
 
 export default App;
+
+const hello = () => ({Welcome: 'hello'});
+const store = createStore(hello);
+console.log(store.getState());
