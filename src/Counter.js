@@ -1,12 +1,21 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {connect} from react-redux
 
 
 function Counter(props) {
   return(
     <div>
       <h1>Counter</h1>
+      <p>Count: {props.count}</p>
+      <button>increment</button>
     </div>
   )
 }
 
-export default Counter;
+function mapStateToProps(state){
+    console.log("mapStateToProps", state);
+    return{
+        count: state.count
+    }
+}
+export default connect(mapStateToProps)(Counter);
