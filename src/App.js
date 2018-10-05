@@ -13,8 +13,20 @@ class App extends Component{
 
 export default App;
 
-const greeting = (state, action) => {
+const defaultState = {
+  welcome: 'Hi',
+  otherState: 'some stuff'
+}
 
+const greeting = (state= defaultState, action) => {
+ switch(action.type){
+  case 'GREET_ME': 
+    return{ welcome: 'Hello Scott'}
+  case 'GREET_WORLD':
+    return { welcome: 'Hello Adam'}
+  default:
+  return state
+ }
 };
 
 
